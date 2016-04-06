@@ -1,0 +1,20 @@
+img {
+  max-width: 150px;
+}
+
+button {
+  @extend .btn;
+
+  &.primary {
+    @extend .btn-primary;
+  }
+}
+
+table {
+  @extend .table;
+}
+
+.info {
+  @extend .glyphicon;
+  @extend .glyphicon-info-sign;
+}

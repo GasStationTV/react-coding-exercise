@@ -1,0 +1,24 @@
+@keyframes loadingAnimation {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1031;
+  height: 3px;
+  background-color: rgba(125, 161, 208, 0.58);
+
+  &.isLoading {
+    animation-duration: 0.5s;
+    animation-name: loadingAnimation;
+    animation-iteration-count: infinite;
+  }
+}

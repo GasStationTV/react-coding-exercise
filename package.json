@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "start": "rwb serve"
+    "start": "node server.js",
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",
@@ -22,15 +23,42 @@
   },
   "homepage": "https://github.com/GasStationTV/react-coding-exercise#readme",
   "dependencies": {
-    "react": "0.14.7",
-    "react-dom": "^0.14.7"
+    "bluebird": "^3.3.4",
+    "classnames": "^2.2.3",
+    "isomorphic-fetch": "^2.2.1",
+    "jquery": "^2.2.3",
+    "q": "^1.4.1",
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-redux": "^4.4.1",
+    "react-router-redux": "^4.0.1",
+    "redux": "^3.3.1",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.0.1"
   },
   "devDependencies": {
+    "babel-core": "^5.6.18",
     "babel-eslint": "^6.0.2",
+    "babel-loader": "^5.1.4",
+    "babel-plugin-react-transform": "^1.1.0",
+    "bootstrap-webpack": "0.0.5",
+    "concurrently": "^0.1.1",
+    "css-loader": "^0.23.1",
     "eslint": "^2.5.3",
     "eslint-config-airbnb": "^6.2.0",
     "eslint-plugin-react": "^4.2.3",
-    "react-router": "2.0.1"
+    "express": "^4.13.3",
+    "react-hot-loader": "^1.3.0",
+    "react-router": "2.0.1",
+    "react-transform-hmr": "^1.0.0",
+    "redux-devtools": "^3.2.0",
+    "redux-devtools-dock-monitor": "^1.0.1",
+    "redux-devtools-log-monitor": "^1.0.1",
+    "sass-loader": "^3.2.0",
+    "webpack": "^1.12.14",
+    "webpack-dev-middleware": "^1.2.0",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-hot-middleware": "^2.2.0"
   },
   "react": {
     "routes": "./routes.js",

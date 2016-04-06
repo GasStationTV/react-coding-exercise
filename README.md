@@ -64,20 +64,15 @@ We ask that you use the same technology that we use on a daily basis. This inclu
 
 ## Setup
 
-To get started, you will need to globally install [rwb](https://github.com/petehunt/rwb). This is a simple global tool to run and serve this application.
-
-`npm install -g git+https://github.com/petehunt/rwb`
-
 Run an npm install.
 
 `npm install`
 
+Then start the app
 
-The application is already setup with some basic files and can be run simply with the start script.
+`npm start`
 
- `npm run start`.
-
- This will serve the application at `localhost:3000`.
+This will serve the application at `localhost:3000`.
 
 ## Submitting Your Work
 Please fork our repository and use a feature branch workflow while developing your functionality. When you are ready to submit your work make a [pull request against our repository](https://help.github.com/articles/using-pull-requests/).
