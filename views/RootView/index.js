@@ -1,16 +1,35 @@
 import React from 'react';
 
-export default class RootView extends React.Component {
-  static propTypes = {
-    children: React.PropTypes.any
-  }
+import SearchForm from '../SearchForm';
+import UserList from '../UserList';
 
-  render () {
+class SearchApp extends React.Component {
+  constructor() {
+    super();
+    // initial states
+    this.state = {
+      data: []
+    }
+  }
+  findUser(user) {
+    const USER_ENDPOINT = `https://api.github.com/search/users?q=${user}`;
+
+    fetch(USER_ENDPOINT)
+      .then((response) => response.json())
+      .then((response) => {
+        this.setState({ data: response.items });
+        console.log(response.items);
+      });
+
+  }
+  render() {
     return (
-      <div>
-        <h3>Welcome To The Exercise</h3>
-        {this.props.children}
-      </div>
+        <div>
+          <SearchForm findUser={this.findUser.bind(this)} />
+          <UserList userInfo={this.state.data} />
+        </div>
     );
   }
 }
+
+export default SearchApp;
