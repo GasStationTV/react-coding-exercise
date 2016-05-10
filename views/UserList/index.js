@@ -1,5 +1,7 @@
 import React from 'react';
 
+require('./styles/styles.css');
+
 class UserList extends React.Component {
   constructor() {
     super();

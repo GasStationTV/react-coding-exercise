@@ -1,0 +1,35 @@
+.flex-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.userInfo {
+  height: 600px;
+  overflow-y: scroll;
+  margin-top: 20px;
+}
+
+.userInfo__content {
+  padding: 10px;
+}
+
+.userInfo__content:nth-child(odd) {
+  background: #f9fafa;
+}
+
+.userInfo__img {
+  width: 150px;
+  height: 150px;
+  margin-right: 20px;
+}
+
+.userInfo__img img {
+  width: 100%;
+}
+
+.userInfo__more-info {
+  width: 27px;
+  height: 27px;
+}
