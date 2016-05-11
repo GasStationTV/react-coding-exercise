@@ -9,7 +9,7 @@ class UserList extends React.Component {
   }
 
   render() {
-    let searchError = this.props.userWarning;
+    let searchError = this.props.searchError;
     let userInfo = this.props.userInfo;
     console.log(userInfo);
     if ( searchError === 0 ) {
