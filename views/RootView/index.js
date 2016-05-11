@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchForm from '../SearchForm';
 import UserList from '../UserList';
+import DetailView from '../DetailView';
 
 require('./styles/bootstrap.min.css');
 require('./styles/app.css');
@@ -10,7 +11,8 @@ class SearchApp extends React.Component {
     super();
     // initial states
     this.state = {
-      data: []
+      data: [],
+      error: ''
     }
   }
   findUser(user) {
@@ -19,8 +21,10 @@ class SearchApp extends React.Component {
     fetch(USER_ENDPOINT)
       .then((response) => response.json())
       .then((response) => {
-        this.setState({ data: response.items });
-        console.log(response.items);
+        this.setState({
+          data: response.items,
+          error: response.total_count
+        });
       });
 
   }
@@ -29,10 +33,12 @@ class SearchApp extends React.Component {
         <div className="app__content">
           <h2 className="text-center app__title">Github Search</h2>
           <SearchForm findUser={this.findUser.bind(this)} />
-          <UserList userInfo={this.state.data} />
+          <UserList userInfo={this.state.data} userError={this.state.error} />
+          {this.props.children}
         </div>
     );
   }
 }
 
 export default SearchApp;
+console.clear();
