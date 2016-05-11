@@ -33,7 +33,7 @@ class SearchApp extends React.Component {
         <div className="app__content">
           <h2 className="text-center app__title">Github Search</h2>
           <SearchForm findUser={this.findUser.bind(this)} />
-          <UserList userInfo={this.state.data} userError={this.state.error} />
+          <UserList userInfo={this.state.data} searchError={this.state.error} />
           {this.props.children}
         </div>
     );

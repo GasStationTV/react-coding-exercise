@@ -9,10 +9,10 @@ class UserList extends React.Component {
   }
 
   render() {
-    let userError = this.props.userWarning;
+    let searchError = this.props.userWarning;
     let userInfo = this.props.userInfo;
     console.log(userInfo);
-    if ( userWarning === 0 ) {
+    if ( searchError === 0 ) {
       return (
         <div>
           <h3 className="text-danger text-center">Your search returned no results.<br /> Please search for another user.</h3>
