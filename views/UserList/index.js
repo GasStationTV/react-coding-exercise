@@ -1,7 +1,7 @@
 import React from 'react';
-import Router, {Link, RouteHandler} from 'react-router';
-
-require('./styles/styles.css');
+import Router, {Link} from 'react-router';
+//- styles
+import styles from './styles/user-list-styles.css';
 
 class UserList extends React.Component {
   constructor() {

@@ -1,11 +1,12 @@
+//- classes
 import React from 'react';
 import $ from 'jquery'; //- sorry :(
 import SearchForm from '../SearchForm';
 import UserList from '../UserList';
 import DetailView from '../DetailView';
-
-require('./styles/bootstrap.min.css');
-require('./styles/app.css');
+//- styles
+import styles from './styles/app.css';
+import bootstrap from './styles/bootstrap.min.css'
 
 class SearchApp extends React.Component {
   constructor() {

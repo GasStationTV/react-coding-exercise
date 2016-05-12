@@ -1,8 +1,7 @@
 import React from 'react';
-import UserList from '../UserList';
 import $ from 'jquery';
-
-require('./styles/styles.css');
+//- styles
+import styles from './styles/detail-view-styles.css';
 
 class DetailView extends React.Component {
   constructor() {
