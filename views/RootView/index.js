@@ -39,4 +39,3 @@ class SearchApp extends React.Component {
 }
 
 export default SearchApp;
-console.clear(); //- im sick of those sourcemap warnings
