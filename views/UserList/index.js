@@ -7,11 +7,9 @@ class UserList extends React.Component {
   constructor() {
     super();
   }
-
   render() {
-    let searchError = this.props.searchError;
-    let userInfo = this.props.userInfo;
-    console.log(userInfo);
+    const searchError = this.props.searchError;
+    const userInfo = this.props.userInfo;
     if ( searchError === 0 ) {
       return (
         <div>
@@ -23,14 +21,15 @@ class UserList extends React.Component {
           <div className="userInfo">
             {
               userInfo.map((user) => {
+                let details = `/details/${user.login}/`;
                 return (
-                    <div className="userInfo__content flex-container">
+                    <div className="userInfo__content flex-container" key={user.id}>
                       <div className="userInfo__img">
-                        <Link to="/details"><img src={user.avatar_url} /></Link>
+                        <Link to={details}><img src={user.avatar_url} /></Link>
                       </div>
                       <div className="">
-                        <p><strong>Github Username</strong>: <span key={user.id}>{user.login}</span></p>
-                        <Link to="/details">Detail</Link>
+                        <p><strong>Github Username</strong>: <span>{user.login}</span></p>
+                        <Link to={details}>Detail</Link>
                       </div>
                     </div>
                 )

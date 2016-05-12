@@ -6,8 +6,8 @@ class SearchForm extends React.Component {
   }
   formSubmit(e) {
     e.preventDefault(); //- stop the default function of form submitting
-    this.props.findUser(this.refs.userSearchName.value);
-    this.refs.userSearchName.value = '';
+    this.props.findUser(this.refs.userSearchName.value); //- pass in the value and call function to search for user
+    this.refs.userSearchName.value = ''; //- clear input area after search performed
   }
   render() {
     return (

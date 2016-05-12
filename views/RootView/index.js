@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery'; //- sorry :(
 import SearchForm from '../SearchForm';
 import UserList from '../UserList';
 import DetailView from '../DetailView';
@@ -16,22 +17,18 @@ class SearchApp extends React.Component {
     }
   }
   findUser(user) {
-    const USER_ENDPOINT = `https://api.github.com/search/users?q=${user}`;
-
-    fetch(USER_ENDPOINT)
-      .then((response) => response.json())
-      .then((response) => {
-        this.setState({
-          data: response.items,
-          error: response.total_count
-        });
+    const USERS_ENDPOINT = `https://api.github.com/search/users?q=${user}`;
+    $.get(USERS_ENDPOINT, (response) => {
+      this.setState({
+        data: response.items,
+        error: response.total_count
       });
-
+    });
   }
   render() {
     return (
-        <div className="app__content">
-          <h2 className="text-center app__title">Github Search</h2>
+        <div className="app-content">
+          <h2 className="title">Github Search</h2>
           <SearchForm findUser={this.findUser.bind(this)} />
           <UserList userInfo={this.state.data} searchError={this.state.error} />
           {this.props.children}
@@ -41,4 +38,4 @@ class SearchApp extends React.Component {
 }
 
 export default SearchApp;
-console.clear();
+console.clear(); //- im sick of those sourcemap warnings
