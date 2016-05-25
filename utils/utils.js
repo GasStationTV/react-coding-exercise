@@ -16,3 +16,18 @@ export function debounce (func, wait, immediate) {
     }
   };
 };
+
+export function fetchData (query, partial, context) {
+  const request_url = partial + query;
+  fetch(request_url)
+    .then((response) => {
+      return response.json();
+    })
+    .then((responseData) => {
+      console.log(responseData);
+      console.log(context.setState)
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+};

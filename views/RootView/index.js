@@ -1,16 +1,28 @@
 import React from 'react';
-import {debounce} from '../../utils/utils.js';
+import {debounce, fetchData} from '../../utils/utils.js';
+
+let request_url_partial = 'https://api.github.com/search/users?q=';
 
 export default class RootView extends React.Component {
 
   static propTypes = {
     children: React.PropTypes.any
-  } 
+  }
+
+  constructor (props) {
+    super (props);
+    this.state = {
+      searchResults : []
+    }
+  }
 
   componentDidMount () {
-     this.debouncedGithubSearch = debounce ((query) => {
-      console.log(query);
-     }, 200);
+    console.log('tha state', this.state)
+    this.debouncedGithubSearch = debounce ((query) => {
+      if (query.length > 3) {
+        fetchData(query, request_url_partial, this);
+      }
+    }, 200);
   }
 
   handleChange (event) {
