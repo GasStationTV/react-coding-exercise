@@ -1,20 +1,22 @@
 import React from 'react';
 import {debounce, fetchData} from '../../utils/utils.js';
 import SearchResultView from './SearchResultView.js';
+import ProfileView from '../profileView/index.js';
 
 let request_url_partial = 'https://api.github.com/search/users?q=';
 
 let divStyle = {
   'display' : 'flex',
-  'justify-content' : 'center',
-  'flex-direction' : 'column',
-  'background-color' : 'lightgrey',
+  'justifyContent' : 'center',
+  'flexDirection' : 'column',
+  'backgroundColor' : 'lightgrey',
   'width' : '400px'
 };
 
 let container = {
   'display' : 'flex',
-  'justify-content' : 'center'
+  'justifyContent' : 'center',
+  'flexDirection' : 'column'
 };
 
 let inputStyle = {
@@ -23,12 +25,12 @@ let inputStyle = {
 
 let inputContainer = {
   'display' : 'flex',
-  'justify-content' : 'center'
+  'justifyContent' : 'center'
 };
 
 let titleStyle = {
   'display' : 'flex',
-  'justify-content' : 'center'
+  'justifyContent' : 'center'
 };
 
 export default class RootView extends React.Component {
@@ -57,6 +59,16 @@ export default class RootView extends React.Component {
     this.debouncedGithubSearch(event.target.value);
   }
 
+  handleClick (event) {
+    console.log(this.state)
+    this.state.searchResults.forEach((person) => {
+      if (event.currentTarget.firstChild.nextSibling.innerHTML === person.login) {
+        console.log(person.login);
+        this.setState({currentFocus : person})
+      }
+    })
+  }
+
   render () {
     return (
       <div style={container}>
@@ -67,9 +79,10 @@ export default class RootView extends React.Component {
           <div style={inputContainer}>
             <input style={inputStyle} type="text" onChange={this.handleChange.bind(this)} />
           </div>
-          <SearchResultView searchResults={this.state.searchResults} />
+          <SearchResultView searchResults={this.state.searchResults} handleClick={this.handleClick.bind(this)}/>
           {this.props.children}
         </div>
+        <ProfileView />
       </div>
     );
   }

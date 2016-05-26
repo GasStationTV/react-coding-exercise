@@ -2,7 +2,7 @@ import React from 'react';
 
 let personStyle1 = {
   'display' : 'flex',
-  'justify-content' : 'space-between'
+  'justifyContent' : 'space-between'
 }
 
 let personImgStyle = {
@@ -12,35 +12,20 @@ let personImgStyle = {
 
 let noResultsStyle = {
   'display' : 'flex',
-  'justify-content' : 'center'
+  'justifyContent' : 'center'
 }
 
 const renderIf = predicate => element => predicate && element;
 
 export default class SearchResultView extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hover: false
-    };
-  }
-
-  handleClick (event) {
-    console.log(this, '  ', event.currentTarget)
-  }
-
-  toggleHover() {
-    this.setState({hover: !this.state.hover});
-  }
 
   render () {
     const noSearchResults = renderIf(this.props.searchResults.length === 0);
     const searchResults = renderIf(this.props.searchResults.length !== 0);
 
     let githubSearchResults = this.props.searchResults.slice(0, 10).map((person) => {
-      console.log(person)
       return (
-        <div style={personStyle1} onClick={this.handleClick.bind(this)}>
+        <div key={person.id} style={personStyle1} onClick={this.props.handleClick}>
           <img style={personImgStyle} src={person.avatar_url} />
           <h4>{person.login}</h4>
           <div style={personImgStyle}></div>

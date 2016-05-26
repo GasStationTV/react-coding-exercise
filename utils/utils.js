@@ -25,7 +25,10 @@ export function fetchData (query, partial, context) {
     })
     .then((responseData) => {
       console.log(responseData);
-      console.log(context.setState)
+      context.setState({
+        searchResults : responseData.items
+      });
+      console.log('state changed ', context.state);
     })
     .catch((err) => {
       console.log(err);
