@@ -5,34 +5,6 @@ import ProfileView from '../profileView/index.js';
 
 let request_url_partial = 'https://api.github.com/search/users?q=';
 
-let divStyle = {
-  'display' : 'flex',
-  'justifyContent' : 'center',
-  'flexDirection' : 'column',
-  'backgroundColor' : 'lightgrey',
-  'width' : '400px'
-};
-
-let container = {
-  'display' : 'flex',
-  'justifyContent' : 'center',
-  'flexDirection' : 'column'
-};
-
-let inputStyle = {
-  'width' : '250px'
-};
-
-let inputContainer = {
-  'display' : 'flex',
-  'justifyContent' : 'center'
-};
-
-let titleStyle = {
-  'display' : 'flex',
-  'justifyContent' : 'center'
-};
-
 export default class RootView extends React.Component {
 
   static propTypes = {
@@ -60,10 +32,10 @@ export default class RootView extends React.Component {
   }
 
   handleClick (event) {
-    console.log(this.state)
+    // console.log(this.state)
     this.state.searchResults.forEach((person) => {
       if (event.currentTarget.firstChild.nextSibling.innerHTML === person.login) {
-        console.log(person.login);
+        console.log(person);
         this.setState({currentFocus : person})
       }
     })
@@ -71,18 +43,18 @@ export default class RootView extends React.Component {
 
   render () {
     return (
-      <div style={container}>
-        <div style={divStyle}>
-          <div style = {titleStyle}>
+      <div className="container">
+        <div className="results-display-container">
+          <div className="title-container">
             <h3>Welcome To The Exercise</h3>
           </div>
-          <div style={inputContainer}>
-            <input style={inputStyle} type="text" onChange={this.handleChange.bind(this)} />
+          <div className="search-container">
+            <input className="search-box" type="text" onChange={this.handleChange.bind(this)} />
           </div>
           <SearchResultView searchResults={this.state.searchResults} handleClick={this.handleClick.bind(this)}/>
           {this.props.children}
         </div>
-        <ProfileView />
+        <ProfileView currentProfile={this.state.currentFocus} />
       </div>
     );
   }

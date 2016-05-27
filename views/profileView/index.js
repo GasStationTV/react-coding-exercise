@@ -5,7 +5,7 @@ export default class ProfileView extends React.Component {
   render () {
     return (
       <div>
-        profile goes here
+        profile goes heres
       </div>
     );
   }

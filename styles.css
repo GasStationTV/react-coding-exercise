@@ -1,0 +1,36 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.search-box {
+  width: 250px;
+}
+
+.search-container, .title-container {
+  display: flex;
+  justify-content: center;  
+}
+
+.results-display-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  width: 400px;
+}
+
+.person-entry-view {
+  display: flex;
+  justify-content: space-between;
+}
+
+.person-entry-view-image {
+  height: 50px;
+  width: 50px;
+}
+
+.person-entry-view-no-results {
+  display: flex;
+  justify-content: center;
+}
