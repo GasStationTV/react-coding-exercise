@@ -10,10 +10,12 @@ export default class SearchResultView extends React.Component {
 
     let githubSearchResults = this.props.searchResults.slice(0, 10).map((person) => {
       return (
-        <div key={person.id} className="person-entry-view" onClick={this.props.handleClick}>
-          <img className="person-entry-view-image" src={person.avatar_url} />
-          <h4>{person.login}</h4>
-          <div className="person-entry-view-image"></div>
+        <div className="person-entry-view-holder">
+          <div key={person.id} className="person-entry-view" onClick={this.props.handleClick}>
+            <img className="person-entry-view-image" src={person.avatar_url} />
+            <h4>{person.login}</h4>
+            <div className="person-entry-view-image"></div>
+          </div>
         </div>
       );
     });
@@ -27,5 +29,5 @@ export default class SearchResultView extends React.Component {
       </div>
     );
   }
-
+  
 }

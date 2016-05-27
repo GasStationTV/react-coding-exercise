@@ -44,7 +44,7 @@ export default class RootView extends React.Component {
             <h3>Welcome To The Exercise</h3>
           </div>
           <div className="search-container">
-            <input className="search-box" type="text" onChange={this.handleChange.bind(this)} />
+            <input id="search-box" className="form-control search-box" type="text" placeholder="search GitHub" onChange={this.handleChange.bind(this)} />
           </div>
           <SearchResultView searchResults={this.state.searchResults} handleClick={this.handleClick.bind(this)}/>
           {this.props.children}
@@ -53,4 +53,5 @@ export default class RootView extends React.Component {
       </div>
     );
   }
+
 }
