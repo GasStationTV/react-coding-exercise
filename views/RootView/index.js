@@ -1,9 +1,7 @@
 import React from 'react';
-import {debounce, fetchData} from '../../utils/utils.js';
+import {debounce, fetchData, fetchUserData} from '../../utils/utils.js';
 import SearchResultView from './SearchResultView.js';
 import ProfileView from '../profileView/index.js';
-
-let request_url_partial = 'https://api.github.com/search/users?q=';
 
 export default class RootView extends React.Component {
 
@@ -22,7 +20,7 @@ export default class RootView extends React.Component {
   componentDidMount () {
     this.debouncedGithubSearch = debounce ((query) => {
       if (query.length >= 3) {
-        fetchData(query, request_url_partial, this);
+        fetchData(query, this);
       }
     }, 200);
   }
@@ -33,12 +31,9 @@ export default class RootView extends React.Component {
 
   handleClick (event) {
     // console.log(this.state)
-    this.state.searchResults.forEach((person) => {
-      if (event.currentTarget.firstChild.nextSibling.innerHTML === person.login) {
-        console.log(person);
-        this.setState({currentFocus : person})
-      }
-    })
+    const person_clicked = event.currentTarget.firstChild.nextSibling.innerHTML;
+    console.log(person_clicked)
+    fetchUserData(person_clicked, this);
   }
 
   render () {
