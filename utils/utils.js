@@ -93,7 +93,9 @@ export function stringifyDate (stringDate) {
     '12' : 'Dec'
   }
 
-  console.log(stringDate)
+  let formattedDate = stringDate.substr(0, 10).split('-');
+  formattedDate = months[formattedDate[1]]+' '+formattedDate[2]+' '+formattedDate[0]; 
+  // console.log(formattedDate)  
 
-  return stringDate;
+  return formattedDate;
 };
