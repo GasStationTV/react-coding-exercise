@@ -17,7 +17,7 @@ export default class ProfileView extends React.Component {
         </section>
         <section className="col-md-4 profile-right-section">
           repos
-          <RightSection />
+          <RightSection currentProfileRepos={this.props.currentProfileRepos}/>
         </section>
       </main>
     );

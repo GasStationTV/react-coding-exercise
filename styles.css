@@ -57,6 +57,7 @@ body {
   padding: 20px;
 }
 
+/*profile left section*/
 .profile-left-section {
   display: flex;
   justify-content: center;
@@ -85,4 +86,19 @@ body {
 .followers-list-image {
   height: 40px;
   width: 40px;
+}
+
+/*profile right section*/ 
+.repo-container {
+  max-height: 400px;
+  overflow: scroll;
+}
+
+.repo-entry > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.repo-entry > div > span {
+  border-radius: 0.7em;
 }

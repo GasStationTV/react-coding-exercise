@@ -41,7 +41,11 @@ export default class RootView extends React.Component {
   render () {
     let profilePage;
     if (this.state.currentFocus) {
-      profilePage = <ProfileView currentProfile={this.state.currentFocus} currentProfileFollowers={this.state.currentFocusFollowers}/>;
+      profilePage = <ProfileView 
+      currentProfile={this.state.currentFocus} 
+      currentProfileFollowers={this.state.currentFocusFollowers}
+      currentProfileRepos={this.state.currentFocusRepos}
+      />;
     }
 
     return (
