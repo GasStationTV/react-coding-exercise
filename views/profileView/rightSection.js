@@ -6,11 +6,12 @@ export default class RightSection extends React.Component {
     let repos;
     if (this.props.currentProfileRepos.length > 0) {
       repos = this.props.currentProfileRepos.map((repo) => {
+        console.log(repo)
         return (
           <li key={repo.id} className="list-group-item repo-entry">
             <div>
               <h6>{repo.name}</h6>
-              <span className="label label-info">{repo.forks} forks</span>
+              <span className="label label-info">{repo.stargazers_count} stars</span>
             </div>
           </li>
         )

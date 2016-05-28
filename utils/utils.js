@@ -28,7 +28,6 @@ export function fetchData (query, context) {
         searchResults : responseData.items,
         dirtySearch : true
       });
-      console.log('state changed ', context.state);
     })
     .catch((err) => {
       throw new Error(err);

@@ -69,10 +69,6 @@ body {
   padding: 20px;
 }
 
-.list-group-item {
-  padding: 0;
-}
-
 /*profile left section*/
 .profile-left-container {
   display: flex;
@@ -98,9 +94,14 @@ body {
   overflow: scroll;
 }
 
+#follower-entry-container {
+  padding: 0;
+}
+
 .followers-list-entry {
   display: flex;
   justify-content: space-between;
+  padding: 8px 10px;
 }
 
 .followers-list-entry:hover {

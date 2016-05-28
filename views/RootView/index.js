@@ -70,7 +70,7 @@ export default class RootView extends React.Component {
       <div className="container">
         <div className="results-display-container">
           <div className="title-container">
-            <h3>Welcome To The Exercise</h3>
+            <h3>Search GitHub Users</h3>
           </div>
           <div className="search-container">
             <input id="search-box" className="form-control search-box" type="text" placeholder="search GitHub" onChange={this.handleChange.bind(this)} />
