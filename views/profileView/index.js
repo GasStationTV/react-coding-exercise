@@ -9,11 +9,11 @@ export default class ProfileView extends React.Component {
     return (
       <main className="profile-container">
         <section className="col-md-4 profile-left-section">
-          <LeftSection profileInfo={this.props.currentProfile}/>
+          <LeftSection profileInfo={this.props.currentProfile} />
         </section>
         <section className="col-md-4 profile-center-section">
           followers
-          <CenterSection />
+          <CenterSection currentProfileFollowers={this.props.currentProfileFollowers} />
         </section>
         <section className="col-md-4 profile-right-section">
           repos
