@@ -7,7 +7,7 @@ export default class ProfileView extends React.Component {
     return (
       <main className="profile-container">
         <section className="col-md-4">
-          <LeftSection />
+          <LeftSection profileInfo={this.props.currentProfile}/>
         </section>
         <section className="col-md-4 profile-center-section">
           center section
