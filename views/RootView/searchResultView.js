@@ -8,13 +8,13 @@ export default class SearchResultView extends React.Component {
     if (this.props.searchResults.length > 0) {
       githubSearchResults = this.props.searchResults.slice(0, 10).map((person) => {
         return (
-          <div key={person.id} className="person-entry-view-holder">
+          <li key={person.id} className="person-entry-view-holder">
             <div className="person-entry-view" onClick={this.props.handleClick}>
               <img className="person-entry-view-image" src={person.avatar_url} />
               <h5>{person.login}</h5>
               <div className="person-entry-view-spacer"></div>
             </div>
-          </div>
+          </li>
         );
       });
     } else if (this.props.dirtySearch){
@@ -22,9 +22,9 @@ export default class SearchResultView extends React.Component {
     }
 
     return (
-      <div className="search-results-container" >
+      <ul className="search-results-container" >
         {githubSearchResults}
-      </div>
+      </ul>
     );
   }
   
