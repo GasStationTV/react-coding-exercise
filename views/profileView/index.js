@@ -10,10 +10,10 @@ export default class ProfileView extends React.Component {
           <LeftSection profileInfo={this.props.currentProfile}/>
         </section>
         <section className="col-md-4 profile-center-section">
-          center section
+          followers
         </section>
         <section className="col-md-4 profile-right-section">
-          right section
+          repos
         </section>
       </main>
     );

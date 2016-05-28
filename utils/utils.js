@@ -47,8 +47,53 @@ export function fetchUserData (query, context) {
         currentFocus : responseData
       });
       console.log('state changed ', context.state.currentFocus);
+      fetchUserFollowersRepos(context.state.currentFocus.repos_url, context, 'repos');
+      fetchUserFollowersRepos(context.state.currentFocus.followers_url, context, 'followers');
     })
     .catch((err) => {
       console.log(err);
     })
-  };
+};
+
+const fetchUserFollowersRepos = (query, context, update) => {
+  fetch(query)
+    .then((response) => {
+      return response.json();
+    })
+    .then((responseData) => {
+      if (update === 'repos') {
+        context.setState({
+          currentFocusRepos : responseData
+        });
+      } if (update === 'followers') {
+        context.setState({
+          currentFocusFollowers : responseData
+        });
+      }
+      console.log('state changed', context.state);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+};
+
+export function stringifyDate (stringDate) {
+  const months = {
+    '01' : 'Jan',
+    '02' : 'Feb',
+    '03' : 'Mar',
+    '04' : 'Apr',
+    '05' : 'May',
+    '06' : 'Jun',
+    '07' : 'July',
+    '08' : 'Aug',
+    '09' : 'Sept',
+    '10' : 'Oct',
+    '11' : 'Nov',
+    '12' : 'Dec'
+  }
+
+  console.log(stringDate)
+
+  return stringDate;
+};

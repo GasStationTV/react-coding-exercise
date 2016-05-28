@@ -13,7 +13,9 @@ export default class RootView extends React.Component {
     super (props);
     this.state = {
       searchResults : [],
-      currentFocus : null
+      currentFocus : null,
+      currentFocusRepos: null,
+      currentFocusFollowers: null
     };
   }
 
