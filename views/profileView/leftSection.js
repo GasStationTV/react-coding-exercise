@@ -6,7 +6,7 @@ export default class LeftSection extends React.Component {
   render () {
 
     return (
-      <div className="profile-left-section">
+      <div className="profile-left-container">
         <img src={this.props.profileInfo.avatar_url} className="profile-left-section-picture"></img>
         <h3>{this.props.profileInfo.login}</h3>
         <h5>{this.props.profileInfo.name}</h5>

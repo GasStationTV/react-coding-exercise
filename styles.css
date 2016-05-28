@@ -55,13 +55,17 @@ body {
 
 .profile-left-section, .profile-center-section, .profile-right-section {
   padding: 20px;
+  margin-top: 30px;
 }
 
 /*profile left section*/
-.profile-left-section {
+.profile-left-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.7em;
+  padding: 25px 20px;
 }
 
 .profile-left-section-picture {
@@ -101,4 +105,5 @@ body {
 
 .repo-entry > div > span {
   border-radius: 0.7em;
+  height: 24px;
 }
