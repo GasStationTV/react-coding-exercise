@@ -9,7 +9,14 @@ body {
 
 .search-container, .title-container {
   display: flex;
-  justify-content: center;  
+  justify-content: center; 
+  min-width: 1100px; 
+}
+
+.search-results-container {
+  position: absolute;
+  left: 558px;
+  z-index: 1;
 }
 
 .title-container {
@@ -22,11 +29,15 @@ body {
   flex-direction: column;
   background-color: #f5f5f5;
   border: 1px solid #e5e5e5;
+  padding: 30px;
+  height: 172px;
+  min-width: 1100px;
 }
 
 .person-entry-view-holder {
   display: flex;
   justify-content: center;
+  background-color: white;
 }
 
 .person-entry-view {
@@ -55,7 +66,6 @@ body {
 
 .profile-left-section, .profile-center-section, .profile-right-section {
   padding: 20px;
-  margin-top: 30px;
 }
 
 /*profile left section*/

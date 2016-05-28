@@ -21,10 +21,17 @@ export default class RootView extends React.Component {
 
   componentDidMount () {
     this.debouncedGithubSearch = debounce ((query) => {
+      query = query.trim();
       if (query.length >= 3) {
         fetchData(query, this);
       }
-    }, 200);
+      if (query.length === 0) {
+        this.setState({
+          searchResults: [],
+          dirtySearch  : false
+        });
+      }
+    }, 400);
   }
 
   handleChange (event) {
@@ -34,7 +41,7 @@ export default class RootView extends React.Component {
   handleClick (event) {
     // console.log(this.state)
     const person_clicked = event.currentTarget.firstChild.nextSibling.innerHTML;
-    console.log(person_clicked)
+    console.log('clicked on', person_clicked)
     fetchUserData(person_clicked, this);
   }
 
@@ -57,7 +64,9 @@ export default class RootView extends React.Component {
           <div className="search-container">
             <input id="search-box" className="form-control search-box" type="text" placeholder="search GitHub" onChange={this.handleChange.bind(this)} />
           </div>
-          <SearchResultView searchResults={this.state.searchResults} handleClick={this.handleClick.bind(this)}/>
+          <SearchResultView searchResults={this.state.searchResults} 
+            dirtySearch={this.state.dirtySearch}
+            handleClick={this.handleClick.bind(this)}/>
           {this.props.children}
         </div>
         {profilePage}

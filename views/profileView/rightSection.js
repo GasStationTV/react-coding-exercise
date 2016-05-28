@@ -6,7 +6,6 @@ export default class RightSection extends React.Component {
     let repos;
     if (this.props.currentProfileRepos.length > 0) {
       repos = this.props.currentProfileRepos.map((repo) => {
-        console.log(repo);
         return (
           <li key={repo.id} className="list-group-item repo-entry">
             <div>

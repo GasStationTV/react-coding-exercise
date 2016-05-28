@@ -1,4 +1,3 @@
-
 export function debounce (func, wait, immediate) {
   let timeout;
   return function() {
@@ -26,12 +25,13 @@ export function fetchData (query, context) {
     })
     .then((responseData) => {
       context.setState({
-        searchResults : responseData.items
+        searchResults : responseData.items,
+        dirtySearch : true
       });
       console.log('state changed ', context.state);
     })
     .catch((err) => {
-      console.log(err);
+      throw new Error(err);
     })
 };
 
@@ -51,7 +51,7 @@ export function fetchUserData (query, context) {
       fetchUserFollowersRepos(context.state.currentFocus.followers_url, context, 'followers');
     })
     .catch((err) => {
-      console.log(err);
+      throw new Error(err);
     })
 };
 
@@ -73,7 +73,7 @@ const fetchUserFollowersRepos = (query, context, update) => {
       console.log('state changed', context.state);
     })
     .catch((err) => {
-      console.log(err);
+      throw new Error(err);
     })
 };
 
