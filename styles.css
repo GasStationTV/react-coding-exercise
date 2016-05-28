@@ -37,7 +37,7 @@ body {
   width: 300px;
 }
 
-.person-entry-view-image {
+.person-entry-view-image, .person-entry-view-spacer {
   height: 50px;
   width: 50px;
 }
@@ -69,4 +69,20 @@ body {
   background-color: red;
   align-self: center;
   margin: 20px;
+}
+
+/*profile center section*/
+.followers-list-container {
+  max-height: 400px;
+  overflow: scroll;
+}
+
+.followers-list-entry {
+  display: flex;
+  justify-content: space-between;
+}
+
+.followers-list-image {
+  height: 40px;
+  width: 40px;
 }
