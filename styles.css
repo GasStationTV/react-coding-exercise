@@ -53,6 +53,10 @@ body {
   min-width: 1100px;
 }
 
+.profile-left-section, .profile-center-section, .profile-right-section {
+  padding: 20px;
+}
+
 .profile-left-section {
   display: flex;
   justify-content: center;
@@ -63,4 +67,5 @@ body {
   height: 100px;
   width: 100px;
   background-color: red;
+  align-self: center;
 }

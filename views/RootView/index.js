@@ -37,6 +37,11 @@ export default class RootView extends React.Component {
   }
 
   render () {
+    let profilePage;
+    if (this.state.currentFocus) {
+      profilePage = <ProfileView currentProfile={this.state.currentFocus} />;
+    }
+
     return (
       <div className="container">
         <div className="results-display-container">
@@ -49,7 +54,7 @@ export default class RootView extends React.Component {
           <SearchResultView searchResults={this.state.searchResults} handleClick={this.handleClick.bind(this)}/>
           {this.props.children}
         </div>
-        <ProfileView currentProfile={this.state.currentFocus} />
+        {profilePage}
       </div>
     );
   }
