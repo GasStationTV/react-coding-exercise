@@ -15,7 +15,8 @@ export default class RootView extends React.Component {
       searchResults : [],
       currentFocus : null,
       currentFocusRepos: [],
-      currentFocusFollowers: []
+      currentFocusFollowers: [],
+      dirtySearch: false
     };
   }
 
@@ -38,13 +39,20 @@ export default class RootView extends React.Component {
     this.debouncedGithubSearch(event.target.value);
   }
 
-  handleClick (event) {
+  handleSearchClick (event) {
     const person_clicked = event.currentTarget.firstChild.nextSibling.innerHTML;
     console.log('clicked on', person_clicked)
     fetchUserData(person_clicked, this);
-    // this.setState({
-    //   searchResults : []
-    // });
+    this.setState({
+      searchResults : [],
+      dirtySearch: false
+    });
+  }
+
+  handleFollowersClick (event) {
+    const person_clicked = event.currentTarget.firstChild.firstChild.nextSibling.innerHTML;
+    console.log('clicked on', person_clicked);
+    fetchUserData(person_clicked, this);
   }
 
   render () {
@@ -54,6 +62,7 @@ export default class RootView extends React.Component {
       currentProfile={this.state.currentFocus} 
       currentProfileFollowers={this.state.currentFocusFollowers}
       currentProfileRepos={this.state.currentFocusRepos}
+      handleClick={this.handleFollowersClick.bind(this)}
       />;
     }
 
@@ -68,7 +77,7 @@ export default class RootView extends React.Component {
           </div>
           <SearchResultView searchResults={this.state.searchResults} 
             dirtySearch={this.state.dirtySearch}
-            handleClick={this.handleClick.bind(this)}/>
+            handleClick={this.handleSearchClick.bind(this)}/>
           {this.props.children}
         </div>
         {profilePage}

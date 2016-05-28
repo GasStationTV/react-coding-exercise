@@ -7,7 +7,7 @@ export default class CenterSection extends React.Component {
     if (this.props.currentProfileFollowers.length > 0) {
       followers = this.props.currentProfileFollowers.map((follower) => {
         return (
-          <li key={follower.id} className="list-group-item">
+          <li key={follower.id} className="list-group-item" onClick={this.props.handleClick}>
             <div className="followers-list-entry">
               <img src={follower.avatar_url} className="followers-list-image" />
               <h6>{follower.login}</h6>
