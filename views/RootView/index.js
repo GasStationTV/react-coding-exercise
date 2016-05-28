@@ -39,10 +39,12 @@ export default class RootView extends React.Component {
   }
 
   handleClick (event) {
-    // console.log(this.state)
     const person_clicked = event.currentTarget.firstChild.nextSibling.innerHTML;
     console.log('clicked on', person_clicked)
     fetchUserData(person_clicked, this);
+    // this.setState({
+    //   searchResults : []
+    // });
   }
 
   render () {

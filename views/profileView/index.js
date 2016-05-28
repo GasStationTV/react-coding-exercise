@@ -12,11 +12,11 @@ export default class ProfileView extends React.Component {
           <LeftSection profileInfo={this.props.currentProfile} />
         </section>
         <section className="col-md-4 profile-center-section">
-          followers
+          <h5>Followers</h5>
           <CenterSection currentProfileFollowers={this.props.currentProfileFollowers} />
         </section>
         <section className="col-md-4 profile-right-section">
-          repos
+          <h5>Repos</h5>
           <RightSection currentProfileRepos={this.props.currentProfileRepos}/>
         </section>
       </main>
