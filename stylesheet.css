@@ -1,0 +1,114 @@
+body {
+  display: flex;
+  justify-content: center; }
+
+#search-box {
+  width: 300px; }
+
+.search-container, .title-container {
+  display: flex;
+  justify-content: center;
+  min-width: 1100px; }
+
+.search-container {
+  position: relative; }
+
+.search-results-container {
+  position: absolute;
+  left: 400px;
+  top: 37px;
+  z-index: 1;
+  padding: 0; }
+
+.results-display-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  padding: 30px;
+  height: 172px;
+  min-width: 1100px; }
+
+.person-entry-view-holder {
+  display: flex;
+  justify-content: center;
+  background-color: white; }
+
+.person-entry-view-holder:hover {
+  cursor: pointer;
+  background-color: #f5f5f5; }
+
+.person-entry-view {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  border: 1px solid #e5e5e5;
+  width: 300px; }
+
+.person-entry-view-image, .person-entry-view-spacer {
+  height: 50px;
+  width: 50px; }
+
+.person-entry-view-no-results {
+  display: flex;
+  justify-content: center; }
+
+/*profile partial css below*/
+.profile-container, .title-container {
+  min-width: 1100px; }
+
+.profile-left-section, .profile-center-section, .profile-right-section {
+  padding: 20px; }
+
+/*profile left section*/
+.profile-left-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.7em;
+  padding: 25px 20px;
+  height: 450px; }
+
+.profile-left-section-picture {
+  height: 150px;
+  width: 150px;
+  background-color: red;
+  align-self: center;
+  margin: 20px; }
+
+/*profile center section*/
+.followers-list-container {
+  max-height: 400px;
+  overflow: scroll; }
+
+#follower-entry-container {
+  padding: 0; }
+
+.followers-list-entry {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px; }
+
+.followers-list-entry:hover {
+  cursor: pointer;
+  background-color: #f5f5f5; }
+
+.followers-list-image {
+  height: 40px;
+  width: 40px; }
+
+/*profile right section*/
+.repo-container {
+  max-height: 400px;
+  overflow: scroll; }
+
+.repo-entry div {
+  display: flex;
+  justify-content: space-between; }
+  .repo-entry div span {
+    border-radius: 0.7em;
+    height: 24px; }
+
+/*# sourceMappingURL=stylesheet.css.map */

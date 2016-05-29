@@ -69,7 +69,6 @@ const fetchUserFollowersRepos = (query, context, update) => {
           currentFocusFollowers : responseData
         });
       }
-      console.log('state changed', context.state);
     })
     .catch((err) => {
       throw new Error(err);
