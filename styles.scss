@@ -13,17 +13,13 @@ body {
   justify-content: center;
 }
 
-#search-box {
-  width: 300px;
-}
 
 .search-container, .title-container {
   @include flex-centered;
   min-width: $min-width; 
-}
-
-.search-container {
-  position: relative;
+  #search-box {
+    width: 300px;
+  }
 }
 
 .search-results-container {
@@ -42,6 +38,9 @@ body {
   padding: 30px;
   height: 172px;
   min-width: $min-width;
+  .search-container {
+    position: relative;
+  }
 }
 
 .person-entry-view-holder {
@@ -52,19 +51,17 @@ body {
 .person-entry-view-holder:hover {
   cursor: pointer;
   background-color: $super-light-grey;
-}
-
-.person-entry-view {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px;
-  border: 1px solid $light-grey;
-  width: 300px;
-}
-
-.person-entry-view-image, .person-entry-view-spacer {
-  height: 50px;
-  width: 50px;
+  .person-entry-view {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border: 1px solid $light-grey;
+    width: 300px;
+    .person-entry-view-image, .person-entry-view-spacer {
+      height: 50px;
+      width: 50px;
+    }
+  }
 }
 
 .person-entry-view-no-results {
@@ -73,7 +70,7 @@ body {
 
 
 /*profile partial css below*/
-.profile-container, .title-container {
+.profile-container {
   min-width: $min-width;
 }
 
@@ -95,7 +92,6 @@ body {
 .profile-left-section-picture {
   height: 150px;
   width: 150px;
-  background-color: red;
   align-self: center;
   margin: 20px;
 }
