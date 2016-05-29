@@ -56,11 +56,12 @@ export default class RootView extends React.Component {
   render () {
     let profilePage;
     if (this.state.currentFocus) {
-      profilePage = <ProfileView 
-      currentProfile={this.state.currentFocus} 
-      currentProfileFollowers={this.state.currentFocusFollowers}
-      currentProfileRepos={this.state.currentFocusRepos}
-      handleClick={this.handleFollowersClick.bind(this)}
+      profilePage = 
+      <ProfileView 
+        currentProfile={this.state.currentFocus} 
+        currentProfileFollowers={this.state.currentFocusFollowers}
+        currentProfileRepos={this.state.currentFocusRepos}
+        handleClick={this.handleFollowersClick.bind(this)}
       />;
     }
 
@@ -72,7 +73,8 @@ export default class RootView extends React.Component {
           </div>
           <div className="search-container">
             <input id="search-box" className="form-control search-box" type="text" placeholder="search GitHub" onChange={this.handleChange.bind(this)} />
-            <SearchResultView searchResults={this.state.searchResults} 
+            <SearchResultView 
+              searchResults={this.state.searchResults} 
               dirtySearch={this.state.dirtySearch}
               handleClick={this.handleSearchClick.bind(this)}
             />

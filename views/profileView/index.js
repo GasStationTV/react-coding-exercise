@@ -15,7 +15,8 @@ export default class ProfileView extends React.Component {
           <h5>Followers</h5>
           <CenterSection 
             handleClick = {this.props.handleClick}
-            currentProfileFollowers={this.props.currentProfileFollowers} />
+            currentProfileFollowers={this.props.currentProfileFollowers} 
+          />
         </section>
         <section className="col-md-4 profile-right-section">
           <h5>Repos</h5>
