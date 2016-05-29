@@ -36,7 +36,6 @@ export function fetchData (query, context) {
 
 export function fetchUserData (query, context) {
   const request_url = 'https://api.github.com/users/' + query;
-  console.log(request_url);
   fetch(request_url)
     .then((response) => {
       return response.json();
@@ -45,7 +44,6 @@ export function fetchUserData (query, context) {
       context.setState({
         currentFocus : responseData
       });
-      console.log('state changed ', context.state.currentFocus);
       fetchUserFollowersRepos(context.state.currentFocus.repos_url, context, 'repos');
       fetchUserFollowersRepos(context.state.currentFocus.followers_url, context, 'followers');
     })

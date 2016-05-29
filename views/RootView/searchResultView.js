@@ -7,7 +7,6 @@ export default class SearchResultView extends React.Component {
     let githubSearchResults;
     if (this.props.searchResults.length > 0) {
       githubSearchResults = this.props.searchResults.slice(0, 10).map((person) => {
-        console.log(person)
         return (
           <li key={person.id} className="person-entry-view-holder">
             <div className="person-entry-view" onClick={this.props.handleClick}>

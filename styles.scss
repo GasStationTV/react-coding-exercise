@@ -46,11 +46,6 @@ body {
 .person-entry-view-holder {
   @include flex-centered;
   background-color: white;
-}
-
-.person-entry-view-holder:hover {
-  cursor: pointer;
-  background-color: $super-light-grey;
   .person-entry-view {
     display: flex;
     justify-content: space-between;
@@ -62,6 +57,11 @@ body {
       width: 50px;
     }
   }
+}
+
+.person-entry-view-holder:hover {
+  cursor: pointer;
+  background-color: $super-light-grey;
 }
 
 .person-entry-view-no-results {
@@ -110,6 +110,9 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 8px 10px;
+  h6 {
+    overflow: scroll;
+  }
 }
 
 .followers-list-entry:hover {
@@ -135,6 +138,9 @@ body {
     span {
       border-radius: 0.7em;
       height: 24px;
+    }
+    h6 {
+      overflow: scroll;
     }
   }
 }

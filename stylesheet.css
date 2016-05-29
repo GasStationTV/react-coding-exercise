@@ -32,19 +32,19 @@ body {
   display: flex;
   justify-content: center;
   background-color: white; }
-
-.person-entry-view-holder:hover {
-  cursor: pointer;
-  background-color: #f5f5f5; }
-  .person-entry-view-holder:hover .person-entry-view {
+  .person-entry-view-holder .person-entry-view {
     display: flex;
     justify-content: space-between;
     padding: 5px;
     border: 1px solid #e5e5e5;
     width: 300px; }
-    .person-entry-view-holder:hover .person-entry-view .person-entry-view-image, .person-entry-view-holder:hover .person-entry-view .person-entry-view-spacer {
+    .person-entry-view-holder .person-entry-view .person-entry-view-image, .person-entry-view-holder .person-entry-view .person-entry-view-spacer {
       height: 50px;
       width: 50px; }
+
+.person-entry-view-holder:hover {
+  cursor: pointer;
+  background-color: #f5f5f5; }
 
 .person-entry-view-no-results {
   display: flex;
@@ -85,6 +85,8 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 8px 10px; }
+  .followers-list-entry h6 {
+    overflow: scroll; }
 
 .followers-list-entry:hover {
   cursor: pointer;
@@ -105,5 +107,7 @@ body {
   .repo-entry div span {
     border-radius: 0.7em;
     height: 24px; }
+  .repo-entry div h6 {
+    overflow: scroll; }
 
 /*# sourceMappingURL=stylesheet.css.map */

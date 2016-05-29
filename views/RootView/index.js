@@ -41,7 +41,6 @@ export default class RootView extends React.Component {
 
   handleSearchClick (event) {
     const person_clicked = event.currentTarget.firstChild.nextSibling.innerHTML;
-    console.log('clicked on', person_clicked)
     fetchUserData(person_clicked, this);
     this.setState({
       searchResults : [],
@@ -51,7 +50,6 @@ export default class RootView extends React.Component {
 
   handleFollowersClick (event) {
     const person_clicked = event.currentTarget.firstChild.firstChild.nextSibling.innerHTML;
-    console.log('clicked on', person_clicked);
     fetchUserData(person_clicked, this);
   }
 
