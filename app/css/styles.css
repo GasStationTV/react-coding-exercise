@@ -1,0 +1,20 @@
+.list__img {
+	height: 100px;
+	width: 100px;
+}
+
+.table--center
+{
+  margin: 0 auto;
+}
+
+td {
+	padding: 20px;
+}
+
+.ul--center
+{
+	width:300px;
+    margin:0 auto;
+    text-align:left;
+}
