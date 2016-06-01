@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
+import { Provider } from 'react-redux';
+import configureStore from '../../store';
 
-export default class RootView extends React.Component {
+const store = configureStore();
+
+export default class RootView extends Component {
   static propTypes = {
-    children: React.PropTypes.any
+    children: PropTypes.any,
   }
 
   render () {
     return (
-      <div>
-        <h3>Welcome To The Exercise</h3>
-        {this.props.children}
+      <div className="container">
+        <Provider store={store}>
+          {this.props.children}
+        </Provider>
       </div>
     );
   }
