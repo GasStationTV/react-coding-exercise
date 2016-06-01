@@ -22,9 +22,20 @@
   },
   "homepage": "https://github.com/GasStationTV/react-coding-exercise#readme",
   "dependencies": {
+    "async": "^2.0.0-rc.5",
+    "async-es": "^2.0.0-rc.5",
     "bootstrap": "^4.0.0-alpha.2",
+    "humps": "^1.1.0",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.13.1",
+    "normalizr": "^2.1.0",
     "react": "0.14.7",
-    "react-dom": "^0.14.7"
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.5",
+    "react-router-redux": "^4.0.4",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.2",
